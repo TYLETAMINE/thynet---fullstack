@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <?php
+    session_start();
+
+    $id = $_SESSION['id'];
+    $login = $_SESSION['login'];
+    ?>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Друзья</title>
+
+    <link rel="stylesheet" href="./source/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul class="sidebar-nav">
+                <a href="<?= $login ?>" class="item inactive">
+                    <div class="item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 
+                            1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 
+                            2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 
+                            3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z" />
+                        </svg>
+                    </div>
+
+                    <div class="item__title">
+                        <p>Профиль</p>
+                    </div>
+                </a>
+
+                <a href="/friends" class="item active">
+                    <div class="item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 
+                            1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 
+                            13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 
+                            3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                        </svg>
+                    </div>
+
+                    <div class="item__title">
+                        <p>Друзья</p>
+                    </div>
+                </a>
+
+                <li class="item inactive">
+                    <div class="item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+                            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 
+                            1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 
+                            3.597-.938 4.18-1.234A9 9 0 0 0 8 15" />
+                        </svg>
+                    </div>
+
+                    <div class="item__title">
+                        <p>Сообщения</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="sidebar-settings_block">
+                <p class="sidebar-settings_title">НАСТРОЙКИ</p>
+
+                <ul class="sidebar-settings">
+                    <li class="item inactive">
+                        <div class="item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 
+                                0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 
+                                0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                            </svg>
+                        </div>
+
+                        <div class="item__title">
+                            <p>Моя информация</p>
+                        </div>
+                    </li>
+
+                    <li class="item inactive">
+                        <div class="item__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+                                <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 
+                                1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 
+                                1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 
+                                1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 
+                                1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 
+                                1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 
+                                1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 
+                                1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 
+                                1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 
+                                .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 
+                                1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 
+                                1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 
+                                1-1.622-.434zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z" />
+                            </svg>
+                        </div>
+
+                        <div class="item__title">
+                            <p>Безопасность</p>
+                        </div>
+                    </li>
+
+                    <?php if ($_SESSION['status'] == 'admin'): ?>
+                        <li class="item inactive">
+                            <div class="item__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+                                    <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 
+                                    2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 
+                                    .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 
+                                    1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 
+                                    2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 
+                                    1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 
+                                    1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 
+                                    13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 
+                                    14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
+                                </svg>
+                            </div>
+
+                            <div class="item__title">
+                                <p>Админ-панель</p>
+                            </div>
+                        </li>
+                    <?php endif; ?>
+
+                    <hr class="horizontal-line">
+                </ul>
+            </div>
+
+            <div class="sidebar-messages_block">
+                <p class="sidebar-messages_title">СООБЩЕНИЯ</p>
+            </div>
+        </div>
+
+        <div class="friends">
+            <p class="friends__title">ДРУЗЬЯ</p>
+            <hr class="horizontal-line">
+
+            <div class="friends-list">
+                <?php
+                require './components/friendsList.php';
+                ?>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
